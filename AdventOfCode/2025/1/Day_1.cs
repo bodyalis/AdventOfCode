@@ -66,8 +66,6 @@ public class Day_1
                     {
                         _currentPosition += CountOfPositions;
                     }
-
-
                 }
                 else  
                 {
