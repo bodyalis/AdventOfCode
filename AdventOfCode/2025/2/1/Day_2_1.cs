@@ -1,4 +1,4 @@
-namespace AdventOfCode._2025._2;
+namespace AdventOfCode._2025._2._1;
 
 public static class Day_2_1
 {
