@@ -1,6 +1,6 @@
-namespace AdventOfCode._2025._4._1;
+namespace AdventOfCode._2025._4._2;
 
-public static class Day_4_1
+public static class Day_4_2
 {
     public struct Position
     {
@@ -22,7 +22,7 @@ public static class Day_4_1
         public Position BottomLeft => new Position(X - 1, Y + 1);
         public Position BottomRight => new Position(X + 1, Y + 1);
 
-        public IEnumerable<Position> Neighbors => new[] { Top, Left, Right, Bottom, TopLeft, TopRight, BottomLeft, BottomRight };
+        public Position[] Neighbors => new[] { Top, Left, Right, Bottom, TopLeft, TopRight, BottomLeft, BottomRight };
 
         public static Position operator +(Position p1, Position p2) => new (p1.X + p2.X, p1.Y + p2.Y);
     }
@@ -30,7 +30,12 @@ public static class Day_4_1
     public class Optimizer
     {
         private const char paper = '@';
+        private const char deletablePaper1 = 'X';
+        private const char deletablePaper2 = 'P';
         private const char empty = '.';
+        private char currentDeletablePaper = deletablePaper1;
+        private char prevDeletablePaper= deletablePaper2;
+
 
         private readonly char[,] _matrix;
 
@@ -48,8 +53,24 @@ public static class Day_4_1
             }
         }
 
+
         public int Optimize()
         {
+            int sum = 0;
+            int i = 0;
+            do
+            {
+                i = OptimizeInternal();
+                sum += i;
+            } while (i > 0);
+
+            return sum;
+        }
+
+        private int OptimizeInternal()
+        {
+            (prevDeletablePaper, currentDeletablePaper) = (currentDeletablePaper, prevDeletablePaper);
+            
             int cnt = 0;
             for (int y = 0; y < _matrix.GetLength(0); y++)
             {
@@ -59,15 +80,21 @@ public static class Day_4_1
                     {
                         continue;
                     }
-                    
+
+                    if (_matrix[y, x] == prevDeletablePaper)
+                    {
+                        _matrix[y, x] = empty;
+                        continue;
+                    }
+
                     Position pos = new Position(x, y);
-                   
+
                     int localCnt = 0;
                     foreach (Position neighbor in pos.Neighbors)
                     {
                         if (neighbor.X >= 0 && neighbor.X < _matrix.GetLength(1) && neighbor.Y >= 0 && neighbor.Y < _matrix.GetLength(0))
                         {
-                            if (_matrix[neighbor.Y, neighbor.X] == paper)
+                            if (IsPaper(neighbor))
                             {
                                 localCnt++;
                             }
@@ -77,15 +104,14 @@ public static class Day_4_1
 
                     if (localCnt < 4)
                     {
-                        Console.WriteLine($"({y}, {x})");
+                        _matrix[y, x] = currentDeletablePaper;
                         cnt++;
                     }
-                    
-
                 }
             }
-            
             return cnt;
         }
+
+        private bool IsPaper(Position neighbor) => _matrix[neighbor.Y, neighbor.X] == paper || _matrix[neighbor.Y, neighbor.X] == currentDeletablePaper;
     }
 }
