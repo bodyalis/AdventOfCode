@@ -23,10 +23,11 @@ public static class Day_3_2
                 while (result.Length < numOfElementsInBattery)
                 {
                     ReadOnlySpan<char> range = default (ReadOnlySpan<char>)!;
+                    
                     int length = row.Length - numOfElementsInBattery + result.Length - prevPos;
+                    
                     range = row.AsSpan().Slice(prevPos + 1, length);
-
-
+                    
                     (char max, int pos) = GetMaxInRange(range);
 
                     result += max;
