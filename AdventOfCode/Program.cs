@@ -26,9 +26,9 @@ using AdventOfCode._2025._4._2;
 
 // var day4 = new Day_4_1.Optimizer("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\4\\File.txt");
 // var result = day4.Optimize();
-var day4 = new Day_4_2.Optimizer("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\4\\File.txt");
+var day4 = new Day_4_2.Optimizer("C:\\Users\\listo\\Projects\\AdventOfCode\\AdventOfCode\\2025\\4\\File.txt");
 var sw = Stopwatch.StartNew();
-var result = day4.Optimize();
+var result = day4.Optimize2();
 sw.Stop();
 
 
