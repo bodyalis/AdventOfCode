@@ -11,6 +11,7 @@ using AdventOfCode._2025._4._1;
 using AdventOfCode._2025._4._2;
 using AdventOfCode._2025._5;
 using AdventOfCode._2025._6;
+using AdventOfCode._2025._7;
 
 
 // var day1 = new Day_1.PasswordDecoder("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\1\\File.txt");
@@ -45,9 +46,17 @@ using AdventOfCode._2025._6;
 // Console.WriteLine(solve);
 // Console.WriteLine(sw.ElapsedMilliseconds);
 
-var day6 = new Day_6_2.Solution("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\6\\File.txt");
+// var day6 = new Day_6_2.Solution("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\6\\File.txt");
+// var sw = Stopwatch.StartNew();
+// var solve = day6.Solve();
+// sw.Stop();
+// Console.WriteLine(sw.ElapsedMilliseconds);
+// Console.WriteLine(solve);
+
+var day7 = new Day_7_1.Solution("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\7\\File.txt");
 var sw = Stopwatch.StartNew();
-var solve = day6.Solve();
+var solve = day7.Solve();
 sw.Stop();
 Console.WriteLine(sw.ElapsedMilliseconds);
 Console.WriteLine(solve);
+
