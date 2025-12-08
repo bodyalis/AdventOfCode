@@ -9,6 +9,7 @@ using AdventOfCode._2025._3._1;
 using AdventOfCode._2025._3._2;
 using AdventOfCode._2025._4._1;
 using AdventOfCode._2025._4._2;
+using AdventOfCode._2025._5;
 
 
 // var day1 = new Day_1.PasswordDecoder("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\1\\File.txt");
@@ -25,13 +26,20 @@ using AdventOfCode._2025._4._2;
 // long sum = volages.Sum();
 
 // var day4 = new Day_4_1.Optimizer("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\4\\File.txt");
-// var result = day4.Optimize();
-var day4 = new Day_4_2.Optimizer("C:\\Users\\listo\\Projects\\AdventOfCode\\AdventOfCode\\2025\\4\\File.txt");
+// // var result = day4.Optimize();
+// var day4 = new Day_4_2.Optimizer("C:\\Users\\listo\\Projects\\AdventOfCode\\AdventOfCode\\2025\\4\\File.txt");
+// var sw = Stopwatch.StartNew();
+// var result = day4.Optimize2();
+// sw.Stop();
+//
+//
+// Console.WriteLine(result);
+// Console.WriteLine(sw.ElapsedMilliseconds);
+
+
+var day5 = new Day_5_2.Solution("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\5\\File.txt");
 var sw = Stopwatch.StartNew();
-var result = day4.Optimize2();
+long solve = day5.Solve();
 sw.Stop();
-
-
-Console.WriteLine(result);
+Console.WriteLine(solve);
 Console.WriteLine(sw.ElapsedMilliseconds);
-
