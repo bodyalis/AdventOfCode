@@ -53,10 +53,17 @@ using AdventOfCode._2025._7;
 // Console.WriteLine(sw.ElapsedMilliseconds);
 // Console.WriteLine(solve);
 
-var day7 = new Day_7_1.Solution("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\7\\File.txt");
+// var day7 = new Day_7_1.Solution("C:\\Users\\Bogdan.Listopad\\RiderProjects\\AdventOfCode\\AdventOfCode\\2025\\7\\File.txt");
+// var sw = Stopwatch.StartNew();
+// var solve = day7.Solve();
+// sw.Stop();
+// Console.WriteLine(sw.ElapsedMilliseconds);
+// Console.WriteLine(solve);
+
+var day7 = new Day_7_2.Solution("C:\\Users\\listo\\Projects\\AdventOfCode\\AdventOfCode\\2025\\7\\File.txt");
 var sw = Stopwatch.StartNew();
 var solve = day7.Solve();
 sw.Stop();
-Console.WriteLine(sw.ElapsedMilliseconds);
+// Console.WriteLine(sw.ElapsedMilliseconds);
 Console.WriteLine(solve);
 

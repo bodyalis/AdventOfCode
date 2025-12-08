@@ -56,5 +56,10 @@ public static class Day_7_1
         public Position Top => new Position(X, Y - 1);
         
         public override string ToString() => $"({X}, {Y})";
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(X, Y);
+        }
     }
 }
